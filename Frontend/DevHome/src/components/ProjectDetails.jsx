@@ -19,6 +19,7 @@ import {
   PlusCircle
 } from "lucide-react";
 
+import API_URL from "./api";
 function ProjectDetails() {
   const { id } = useParams();
   const navigate = useNavigate();

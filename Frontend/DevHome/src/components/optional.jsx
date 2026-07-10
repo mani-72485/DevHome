@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from 'framer-motion';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Legend } from 'recharts';
 import { Calendar, Tag, Search, Filter, RefreshCw, DollarSign, ListOrdered } from 'lucide-react';
+import API_URL from './api';
 
 const COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899'];
 

@@ -6,6 +6,7 @@ import {
   Home, Calendar, Heart, Lock, Bell, 
   Shield, MapPin, Activity, ChevronRight 
 } from "lucide-react";
+import API_URL from "./api";
 
 function Profile() {
   const [user, setUser] = useState(null);

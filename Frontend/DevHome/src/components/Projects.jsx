@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // Assumes you are using react-router-dom for navigation
 import axios from "axios";
 import { Calendar, DollarSign, Layers, CheckCircle2, AlertCircle, Clock, PauseCircle } from "lucide-react";
+import API_URL from "./api";
 
 function Projects() {
   const [projects, setProjects] = useState([]);

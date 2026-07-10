@@ -19,6 +19,7 @@ import {
   Headphones,
   Fingerprint
 } from "lucide-react";
+import API_URL from "./api";
 
 function Register() {
   const navigate = useNavigate();

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ArrowLeft, Users, Calendar, Briefcase, User, Search, RefreshCw, Folder } from "lucide-react";
+import API_URL from "./api";
 
 function GetLabour() {
   const navigate = useNavigate();
