@@ -14,6 +14,8 @@ import GetLabour from "./components/GetLabour";
 import ExpensesDashboard from "./components/ExpensesDashboard";
 import ExpenseTracker from "./components/ExpenseTracker";
 import ChangePassword from "./components/changepassword";
+import Footer from "./components/Footer"; // 1. Import the Footer
+
 function App() {
   return (
     <>
@@ -33,8 +35,8 @@ function App() {
         <Route path="/expenses_dashboard" element={<ExpensesDashboard />} />
         <Route path="/expense_tracker" element={<ExpenseTracker />} />
         <Route path="/changepassword" element={<ChangePassword />} />
-
       </Routes>
+      <Footer /> {/* 2. Place it here */}
     </>
   );
 }
