@@ -84,9 +84,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     
 ]
-CORS_ALLOWED_ORIGINS = [
-    "https://dev-home-ruddy.vercel.app",
-]
+
 
 WSGI_APPLICATION = 'devhome.wsgi.application'
 
