@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import API_URL from "./api";
 
 function ChangePassword() {
     const navigate = useNavigate();
@@ -38,7 +39,7 @@ function ChangePassword() {
 
         try {
             const response = await axios.post(
-                "http://127.0.0.1:8000/change-password/",
+                `${API_URL}/change-password/`,
                 {
                     user_id: user?.id,
                     old_password: formData.old_password,

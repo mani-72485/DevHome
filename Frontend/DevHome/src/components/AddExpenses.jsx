@@ -1,3 +1,5 @@
+import API_URL from "./api";
+
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
@@ -102,7 +104,7 @@ export default function AddExpenses() {
     setLoading(true);
     try {
       // Sending payload array to Django REST endpoint 
-      await axios.post("http://127.0.0.1:8000/expenses/", payload, {
+      await axios.post(`${API_URL}/expenses/`, payload, {
         headers: { 
           "Authorization": `Bearer ${token}`,
           "Content-Type": "application/json"

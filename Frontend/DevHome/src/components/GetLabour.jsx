@@ -30,7 +30,7 @@ function GetLabour() {
       }
 
       const response = await axios.get(
-        `http://127.0.0.1:8000/get_labour/${projectId}/`,
+        `${API_URL}/get_labour/${projectId}/`,
         {
           params: { working_date: date },
           headers: {

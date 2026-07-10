@@ -9,7 +9,7 @@ import { Calendar, Tag, Search, Filter, RefreshCw, DollarSign, ListOrdered } fro
 const COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#EC4899'];
 
 export default function ExpenseTracker() {
-  // Filter States
+  
   const [fromDate, setFromDate] = useState('');
   const [toDate, setToDate] = useState('');
   const [category, setCategory] = useState('All');
@@ -40,7 +40,7 @@ export default function ExpenseTracker() {
         return;
       } 
       const response = await axios.get(
-        `http://127.0.0.1:8000/expense_meta_options/${projectId}/`,
+        `${API_URL}/expense_meta_options/${projectId}/`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setDbCategories(response.data.categories);
@@ -69,7 +69,7 @@ export default function ExpenseTracker() {
       if (expenseName) params.append('expense_name', expenseName);
 
       const response = await axios.get(
-        `http://127.0.0.1:8000/filter_expenses/${projectId}/?${params.toString()}`,
+        `${API_URL}/filter_expenses/${projectId}/?${params.toString()}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

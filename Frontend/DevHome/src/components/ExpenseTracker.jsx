@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from "react-router-dom";
+import API_URL from './api';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Legend } from 'recharts';
@@ -35,7 +36,7 @@ export default function ExpenseTracker() {
       if (!token) return; // Handled by global auth useEffect
 
       const response = await axios.get(
-        `http://127.0.0.1:8000/expense_meta_options/${projectId}/`,
+        `${API_URL}/expense_meta_options/${projectId}/`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setDbCategories(response.data.categories);
@@ -60,7 +61,7 @@ export default function ExpenseTracker() {
       if (expenseName) params.append('expense_name', expenseName);
 
       const response = await axios.get(
-        `http://127.0.0.1:8000/filter_expenses/${projectId}/?${params.toString()}`,
+        `${API_URL}/filter_expenses/${projectId}/?${params.toString()}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

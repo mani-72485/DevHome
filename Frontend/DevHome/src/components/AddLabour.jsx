@@ -1,3 +1,4 @@
+import API_URL from "./api";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -56,7 +57,7 @@ function AddLabour() {
       
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/labourmanagement/",
+        `${API_URL}/labourmanagement/`,
         formData,
         {
           headers: {

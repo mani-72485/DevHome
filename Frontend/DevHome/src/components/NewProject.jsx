@@ -39,7 +39,7 @@ const ProjectForm = () => {
     try {
       // Replace with your actual backend host domain if it's not localhost:8000
       // Django routers map router.register(r'newproject', NewProject) to /newproject/
-      const response = await fetch('http://localhost:8000/newproject/', {
+      const response = await fetch(`${API_URL}/newproject/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ function Projects() {
 
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/get_projects/",
+        `${API_URL}/get_projects/`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

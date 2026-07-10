@@ -53,7 +53,7 @@ function Register() {
 
   try {
     const response = await axios.post(
-      "http://127.0.0.1:8000/devhome/",
+      `${API_URL}/devhome/`,
       form
     );
 

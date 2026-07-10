@@ -10,6 +10,7 @@ import {
   MoreVertical,
   Download
 } from "lucide-react";
+import API_URL from "./api";
 
 function Dashboard() {
   // --- STATE FOR DYNAMIC DATA ---
@@ -37,7 +38,7 @@ function Dashboard() {
     // Replace 'USER_ID_HERE' with your dynamic user ID context/prop or authentication id
     const userId = user.id; 
     
-    fetch(`http://127.0.0.1:8000/get-all-project-expenses/${user.id}/`)
+    fetch(`${API_URL}/get-all-project-expenses/${user.id}/`)
   .then((res) => res.json())
   .then((resData) => {
 

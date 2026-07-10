@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { Calendar, Filter, DollarSign, ListFilter } from 'lucide-react';
 import { useLocation, useNavigate } from "react-router-dom";
+import API_URL from './api';
 
 const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
 
@@ -25,7 +26,7 @@ export default function ExpensesDashboard() {
     try {
      
       
-      let url = `http://localhost:8000/get_expenses/${projectId}/?category=${selectedCategory}`;      
+      let url = `${API_URL}/get_expenses/${projectId}/?category=${selectedCategory}`;      
       if (fromDate && toDate) {
         url += `&from_date=${fromDate}&to_date=${toDate}`;
       }
