@@ -32,7 +32,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "devhome.onrender.com",
+    "devhome-akm0.onrender.com",
 ]
 
 
