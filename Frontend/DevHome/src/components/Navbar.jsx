@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; // Updated: Added useLocation
 import { useEffect, useState } from "react";
 import {
   Home as HomeIcon,
@@ -8,19 +8,21 @@ import {
   Wallet,
   FolderOpen,
   LogOut,
-  Menu, // Added for mobile menu button
-  X,    // Added for closing mobile menu
+  Menu, 
+  X,    
 } from "lucide-react";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation(); // Updated: Initialized the location hook
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track mobile menu visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
   useEffect(() => {
+    // This effect now re-runs every time the user navigates to a new page/route
     const token = localStorage.getItem("accessToken");
     setIsLoggedIn(!!token);
-  }, []);
+  }, [location]); // Updated: Added location as a dependency
 
   const logout = () => {
     localStorage.removeItem("accessToken");
@@ -32,10 +34,9 @@ function Navbar() {
     navigate("/login");
   };
 
-  // Fixed: Removed TypeScript type annotation ': string'
   const handleNavigation = (path) => {
     navigate(path);
-    setIsMenuOpen(false); // Close mobile menu on navigation
+    setIsMenuOpen(false); 
   };
 
   return (
