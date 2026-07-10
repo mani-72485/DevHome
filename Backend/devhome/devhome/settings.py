@@ -80,8 +80,12 @@ TEMPLATES = [
     },
 ]
 CORS_ALLOWED_ORIGINS = [
-    "https://devhome.vercel.app",
+    "https://dev-home-ruddy.vercel.app/",
     "http://localhost:5173",
+    
+]
+CSRF_TRUSTED_ORIGINS = [
+   "https://dev-home-ruddy.vercel.app/",
 ]
 
 WSGI_APPLICATION = 'devhome.wsgi.application'
