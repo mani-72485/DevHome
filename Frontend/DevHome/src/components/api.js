@@ -1,3 +1,3 @@
-const API_URL = import.meta.env.Dev_home_url;
+const API_URL = import.meta.env.VITE_DEV_HOME_URL;
 
 export default API_URL;
